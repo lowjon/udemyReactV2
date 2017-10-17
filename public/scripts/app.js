@@ -60,6 +60,16 @@ function getLocation(location) {
 
 var count = 0;
 
+var addOne = function addOne() {
+  console.log('addOne');
+};
+var minusOne = function minusOne() {
+  console.log('minusOne');
+};
+var resetCounter = function resetCounter() {
+  console.log('resetCounter');
+};
+
 var templateTwo = React.createElement(
   'div',
   null,
@@ -71,10 +81,21 @@ var templateTwo = React.createElement(
   ),
   React.createElement(
     'button',
-    { id: 'my-id', className: 'myClass' },
+    { onClick: addOne },
     '+1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: minusOne },
+    '-1'
+  ),
+  React.createElement(
+    'button',
+    { onClick: resetCounter },
+    'Reset'
   )
 );
+console.log(templateTwo);
 
 var appRoot = document.getElementById('app');
 

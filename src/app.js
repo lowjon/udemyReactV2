@@ -31,12 +31,26 @@ const user = {
 
 let count = 0
 
+const addOne = () => {
+  console.log('addOne');
+}
+const minusOne = () => {
+  console.log('minusOne');
+}
+const resetCounter = () => {
+  console.log('resetCounter');
+}
+
+
 const templateTwo = (
   <div>
     <h1>Count: {count}</h1>
-    <button id="my-id" className="myClass">+1</button>
+    <button onClick = {addOne}>+1</button>
+    <button onClick = {minusOne}>-1</button>
+    <button onClick = {resetCounter}>Reset</button>
   </div>
 )
+console.log(templateTwo);
 
 const appRoot = document.getElementById('app')
 
