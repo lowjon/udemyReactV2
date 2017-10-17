@@ -27,6 +27,8 @@ var removeAll = function removeAll() {
 
 var appRoot = document.getElementById('app');
 
+var numbers = [55, 101, 1000];
+
 var renderApp = function renderApp() {
   var template = React.createElement(
     'div',
@@ -59,16 +61,13 @@ var renderApp = function renderApp() {
     React.createElement(
       'ol',
       null,
-      React.createElement(
-        'li',
-        null,
-        'Item One'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Item Two'
-      )
+      appObject.options.map(function (option) {
+        return React.createElement(
+          'li',
+          { key: option },
+          option
+        );
+      })
     ),
     React.createElement(
       'form',
