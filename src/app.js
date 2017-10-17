@@ -41,9 +41,7 @@ const renderApp = () => {
 
       <ol>
         {
-          appObject.options.map((option) => {
-            return <li key = {option}>{option}</li>
-          })
+          appObject.options.map((option) => <li key = {option}>{option}</li>)
         }
       </ol>
       <form onSubmit={onFormSubmit}>
