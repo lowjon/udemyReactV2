@@ -1,0 +1,19 @@
+// this converts rem to a base 10 conversion. Easier conversion
+// on the fly.
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $dark-blue;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+}
+
+button {
+  cursor: pointer;
+}
+button:disabled{
+  cursor: default;
+}
