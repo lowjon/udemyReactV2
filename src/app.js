@@ -1,7 +1,65 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import IndecisionApp from './components/IndecisionApp'
+import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'))
+const ExpenseDashboardPage = () => {
+  return (
+  <div>
+    this is from the dashboard component
+  </div>
+)}
+const AddExpensePage = () => {
+  return (
+  <div>
+    this is from the addExpense
+  </div>
+)}
+const EditExpensePage = () => {
+  return (
+  <div>
+    this is from the EditExpensePage
+  </div>
+)}
+const HelpPage = () => {
+  return (
+  <div>
+    this is from the HelpPage
+  </div>
+)}
+const NotFoundPage = () => {
+  return (
+  <div>
+    404! - <Link to="/">Go Home!</Link>
+  </div>
+)}
+
+const Header =()=> (
+  <header>
+    <h1>Expensify</h1>
+    <NavLink to="/" activeClassName="is-active" exact={true}>Dashboard</NavLink>
+    <NavLink to="/create" activeClassName="is-active">Create Expense</NavLink>
+    <NavLink to="/edit" activeClassName="is-active">Edit Expense</NavLink>
+    <NavLink to="/help" activeClassName="is-active">Help</NavLink>
+  </header>
+)
+
+const routes = (
+  <BrowserRouter>
+    <div>
+      <Header />
+      <Switch>
+        <Route path="/" component={ExpenseDashboardPage} exact={true}/>
+        <Route path="/create" component={AddExpensePage} />
+        <Route path="/edit" component={EditExpensePage} />
+        <Route path="/help" component={HelpPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </div>
+
+  </BrowserRouter>
+)
+
+
+ReactDOM.render(routes, document.getElementById('app'))
